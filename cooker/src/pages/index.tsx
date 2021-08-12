@@ -11,9 +11,8 @@ export default function Home() {
 
   return (
     <>
-      <Header/>
-      <Footer />
-      
+    
+      <div>index page</div>
     </>
   )
 }
