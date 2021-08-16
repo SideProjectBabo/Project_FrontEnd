@@ -25,7 +25,7 @@ const HeaderWrapper = styled.div`
         
     }
    .search{
-        width: 300px;
+        width: 450px;
         height: 40px;
         border: 1px solid #6A6A6A;
         padding:3px;
