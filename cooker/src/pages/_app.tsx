@@ -1,23 +1,17 @@
-
 import 'antd/dist/antd.css'
-import { Layout } from 'antd';
 import type { AppProps } from 'next/app'
 import AppHeader from 'src/components/Header'
-const { Header, Footer, Content } = Layout;
-
+import AppFooter from 'src/components/Footer'
+import AppNav from 'src/components/Nav'
+import '../../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Layout>
-        <Header style={{backgroundColor:"white"}} >
-          <AppHeader />
-        </Header >
-        <Content>
-          <Component {...pageProps} />
-        </Content>
-        <Footer />
-      </Layout>
+      <AppHeader />
+      <AppNav/>
+      <Component {...pageProps} />
+      <AppFooter/>
     </>
   )
 

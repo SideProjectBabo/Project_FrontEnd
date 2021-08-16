@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import Footer from 'src/components/Footer';
-import Header from 'src/components/Header'
-
+import { IMAGES } from 'src/commons/variables'
+import Image from 'next/image'
 export default function Home() {
 
   useEffect(() => {
@@ -11,8 +10,9 @@ export default function Home() {
 
   return (
     <>
-    
       <div>index page</div>
+      <Image src={IMAGES.BANNER} alt="Picture of the author" />
+      
     </>
   )
 }
