@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { HeartOutlined, SearchOutlined, } from '@ant-design/icons';
 const HeaderWrapper = styled.div`
+    padding:20px 50px 0px 50px;
     font-family: PT Sans;
     font-style: normal;
     font-weight: normal;
@@ -25,7 +26,7 @@ const HeaderWrapper = styled.div`
         
     }
    .search{
-        width: 450px;
+        width: 300px;
         height: 40px;
         border: 1px solid #6A6A6A;
         padding:3px;

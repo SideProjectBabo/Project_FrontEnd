@@ -5,6 +5,15 @@ import { Carousel } from 'antd';
 import * as api from "../api";
 import { RestaurantType } from '../types'
 import styled from 'styled-components';
+import { useSelector, useDispatch } from "react-redux"
+import { counterStateType, authStateType } from 'src/types'
+import {
+  decrement,
+  increment,
+  reset,
+  logIn,
+  logOut,
+} from "src/redux/actions";
 export default function Home() {
 
   const MainWrapper = styled.div`
@@ -20,7 +29,7 @@ export default function Home() {
     justify-content: center;
   }
   .middle2{
-    padding: 10px;
+    padding-top: 10px;
     width:100%;
     height: 50px;
     color:#FB9620;
@@ -69,16 +78,20 @@ export default function Home() {
     background: '#EFEFEF',
   };
   const contentImageStyle = {
-    width:"450px",
+    width: "450px",
     marginLeft: "auto",
     marginRight: "auto",
     paddingTop: "20px"
   };
   console.log(restaurantData);
 
-
+  const counter = useSelector((state: counterStateType) => state.counter);
+  const auth = useSelector((state: authStateType) => state.auth);
+  const dispatch = useDispatch();
   return (
     <MainWrapper>
+      <h3>{counter}</h3>
+      <button onClick={() => dispatch(increment())}>Increase</button>
       <Image src={IMAGES.BANNER} alt="Picture of the author" />
 
       <div className="middle">
