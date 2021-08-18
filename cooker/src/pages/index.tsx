@@ -14,45 +14,47 @@ import {
   logIn,
   logOut,
 } from "src/redux/actions";
-export default function Home() {
 
-  const MainWrapper = styled.div`
-  .middle{
-    padding: 10px;
-    width:100%;
-    height: 50px;
-    color:#ffffff;
-    background-color: #FB9620;
-    font-size: 15px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
-  .middle2{
-    padding-top: 10px;
-    width:100%;
-    height: 50px;
-    color:#FB9620;
+
+const MainWrapper = styled.div`
+.middle{
+  padding: 10px;
+  width:100%;
+  height: 50px;
+  color:#ffffff;
+  background-color: #FB9620;
+  font-size: 15px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.middle2{
+  padding-top: 10px;
+  width:100%;
+  height: 50px;
+  color:#FB9620;
+  font-size: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.slider-title{
+  padding-top: 30px;
+  background-color:#EFEFEF;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction: column;
+  .title{
     font-size: 30px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
-  .slider-title{
-    padding-top: 30px;
-    background-color:#EFEFEF;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    flex-direction: column;
-    .title{
-      font-size: 30px;
-      font-weight: bold;
-    }
-    
+    font-weight: bold;
   }
   
-  `
+}
+
+`
+
+export default function Home() {
 
   useEffect(() => {
     getAllRestaurant();

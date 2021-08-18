@@ -7,21 +7,24 @@ import '../../styles/globals.css'
 import { Provider } from "react-redux";
 import allReducers from "src/redux/reducers";
 import withRedux from 'next-redux-wrapper';
-import wrapper from "src/redux/store";
 import { createStore, compose, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { IMAGES } from 'src/commons/variables'
+import Main from 'src/components/main'
 function MyApp({ Component, pageProps }: AppProps) {
+
+  
   const store = createStore(allReducers)
   return (
     <>
-
-      <AppHeader />
-      <AppNav />
-      <Component {...pageProps} />
-      <AppFooter />
-
+      <Provider store={store}>
+        <AppHeader />
+        {/* <AppNav /> */}
+        <Component {...pageProps} />
+        <AppFooter />
+      </Provider>
     </>
   )
 
 }
-export default wrapper.withRedux(MyApp);
+export default MyApp
