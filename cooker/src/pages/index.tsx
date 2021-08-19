@@ -17,7 +17,9 @@ import {
 
 
 const MainWrapper = styled.div`
-.middle{
+
+  padding-bottom: 50px;
+  .middle{
   padding: 10px;
   width:100%;
   height: 50px;
@@ -78,14 +80,19 @@ export default function Home() {
     color: '#fff',
     lineHeight: '160px',
     background: '#EFEFEF',
+    paddingBottom:"100px"
+    
+  
   };
   const contentImageStyle = {
     width: "450px",
     marginLeft: "auto",
     marginRight: "auto",
-    paddingTop: "20px"
+    paddingTop: "20px",
+    paddingBottom:"100px"
+    
   };
-  console.log(restaurantData);
+  console.log(restaurantData, 11);
 
   const counter = useSelector((state: counterStateType) => state.counter);
   const auth = useSelector((state: authStateType) => state.auth);

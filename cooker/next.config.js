@@ -1,5 +1,3 @@
 module.exports = {
-  images: {
-    minimumCacheTTL: 60,
-  },
+  reactStrictMode: true,
 }
