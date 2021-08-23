@@ -3,6 +3,7 @@ import { IMAGES } from 'src/commons/variables'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { HeartOutlined, SearchOutlined, } from '@ant-design/icons';
+
 const HeaderWrapper = styled.div`
     padding:20px 50px 0px 50px;
     font-family: PT Sans;
