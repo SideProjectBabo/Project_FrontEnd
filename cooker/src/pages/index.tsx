@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { IMAGES } from 'src/commons/variables'
 import Image from 'next/image'
 import { Carousel } from 'antd';
-import * as api from "../api";
+import * as api from "src/api/index";
 import { RestaurantType } from '../types'
 import styled from 'styled-components';
 import { useSelector, useDispatch } from "react-redux"
@@ -39,6 +39,7 @@ const MainWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  margin-bottom: 10px;
 }
 .slider-title{
   padding-top: 30px;
@@ -50,6 +51,11 @@ const MainWrapper = styled.div`
   .title{
     font-size: 30px;
     font-weight: bold;
+  }
+  .spring{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
 }
@@ -80,42 +86,52 @@ export default function Home() {
     color: '#fff',
     lineHeight: '160px',
     background: '#EFEFEF',
-    paddingBottom:"100px"
-    
-  
+    paddingBottom: "100px"
+
+
   };
   const contentImageStyle = {
     width: "450px",
     marginLeft: "auto",
     marginRight: "auto",
     paddingTop: "20px",
-    paddingBottom:"100px"
-    
+    paddingBottom: "100px"
+
   };
-  console.log(restaurantData, 11);
+
 
   const counter = useSelector((state: counterStateType) => state.counter);
   const auth = useSelector((state: authStateType) => state.auth);
   const dispatch = useDispatch();
+
+
   return (
     <MainWrapper>
-      <h3>{counter}</h3>
-      <button onClick={() => dispatch(increment())}>Increase</button>
+      {/* <h3>{counter}</h3> */}
+      {/* <button onClick={() => dispatch(increment())}>Increase</button> */}
       <Image src={IMAGES.BANNER} alt="Picture of the author" />
+      <div>
+        <div className="middle">
 
-      <div className="middle">
-        <div>지갑은 가볍게 맛은 묵직하게</div>
+          <div>지갑은 가볍게 맛은 묵직하게</div>
+        </div>
+        <div className="middle2">
+
+          <div style={{ width: 100, height: 100 }}>
+            <Image width="90%" height="90%" src={IMAGES.HOT} alt="Picture of the author" />
+          </div>
+          <div>Deal Recipe</div>
+          <div style={{ width: 100, height: 100 }}></div>
+        </div>
       </div>
-      <div className="middle2">
-        <div>Deal Recipe</div>
+
+      <div className="spring" >
+        <Image src={IMAGES.SPRING} alt="Picture of the author" />
       </div>
-      <Image src={IMAGES.SPRING} alt="Picture of the author" />
       <div className="slider-title" >
         <div className="title" >쿠커소식</div>
         <div>매주 업로드 되는 쿠커의 신선한 노하우와 이벤트를 확인하세요</div>
       </div>
-
-
       <Carousel autoplay>
         {restaurantData.map((data, index) => {
           return (
