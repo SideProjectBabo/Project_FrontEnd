@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { IMAGES } from 'src/commons/variables'
 import Image from 'next/image'
 import { Carousel } from 'antd';
-import * as api from "../api";
-import { RestaurantType } from '../types'
+import * as api from "src/api/index";
+import { RestaurantType } from 'src/types'
 import styled from 'styled-components';
 import { useSelector, useDispatch } from "react-redux"
 import { counterStateType, authStateType } from 'src/types'
