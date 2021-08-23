@@ -6,20 +6,17 @@ import AppNav from 'src/components/Nav'
 import '../../styles/globals.css'
 import { Provider } from "react-redux";
 import allReducers from "src/redux/reducers";
-import withRedux from 'next-redux-wrapper';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { IMAGES } from 'src/commons/variables'
-import Main from 'src/components/main'
 function MyApp({ Component, pageProps }: AppProps) {
 
-  
   const store = createStore(allReducers)
   return (
     <>
       <Provider store={store}>
         <AppHeader />
-        {/* <AppNav /> */}
+        <AppNav />
         <Component {...pageProps} />
         <AppFooter />
       </Provider>
